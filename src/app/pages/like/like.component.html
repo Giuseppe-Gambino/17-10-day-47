@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Pagina preferiti</h1>
+  <h1>Tot post che ti piacciono:{{ likeArr.length }}</h1>
+  <div class="row row-cols-3 g-4">
+    <div class="col" *ngFor="let likedPost of likeArr">
+      <div class="card h-100">
+        <img
+          src="{{ likedPost.thumbnailUrl }}"
+          class="card-img-top"
+          width="100"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ likedPost.title }}</h5>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger m-1">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

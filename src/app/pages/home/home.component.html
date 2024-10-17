@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Post che ti piacciono:{{ likeArr.length }}</h1>
+  <div class="row row-cols-3 g-4">
+    <div class="col" *ngFor="let post of allPosts">
+      <div class="card h-100">
+        <img src="{{ post.thumbnailUrl }}" class="card-img-top" width="100" />
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+        </div>
+        <div class="card-footer">
+          <button (click)="removeFromLike(post)" class="btn btn-danger m-1">
+            Delete
+          </button>
+          <button (click)="addToLike(post)" class="btn btn-primary m-1">
+            like
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
