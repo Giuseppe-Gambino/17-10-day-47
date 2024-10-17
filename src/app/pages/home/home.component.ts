@@ -27,11 +27,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   addToLike(post: iPost) {
-    this.likeArr.push(post);
+    if (this.likeArr.includes(post)) {
+      console.log('gia presente');
+    } else {
+      this.likeArr.push(post);
+    }
   }
 
   removeFromLike(currentPost: iPost) {
-    this.likeArr.pop();
+    this.likeArr = this.likeArr.filter((post) => post.id !== currentPost.id);
   }
 
   ngOnDestroy(): void {

@@ -10,7 +10,6 @@ import { iPost } from '../../interfaces/main-interface-server';
 export class LikeComponent {
   constructor(private apiService: ServerService) {}
 
-  allPosts: iPost[] = [];
   likeArr: iPost[] = [];
 
   ngOnInit() {
